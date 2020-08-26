@@ -1,0 +1,5 @@
+<p>price-details works!</p>
+<ul *ngFor="let shipping of shippingPrice">
+    <li> {{ shipping.type }}</li>
+    <li> {{ shipping.price | currency }}</li>
+  </ul>

@@ -1,0 +1,84 @@
+<div class="container">   
+  <mat-card>
+    <mat-toolbar color="accent">  
+      <div align="center" style="color:white;text-align: right;">      
+        Product Master
+      </div>         
+    </mat-toolbar>  
+  </mat-card>
+  <!-- <mat-card>
+  <mat-card-content> -->
+    <form [formGroup]="productform" (ngSubmit)="onFormSubmit()">  
+      <div class="form-group">
+        <table class="table">
+          <tr>
+            <td>
+              <label for="name">ProductName</label>
+              <span class="demo-full-width" *ngIf="!productform.get('ProductName').value && productform.get('ProductName').touched"></span>
+            </td>
+            <td>             
+              <input formControlName="ProductName" type="text">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="name">Description</label>
+            </td>
+            <td>             
+              <textarea formControlName="Description" rows="2" cols="23" type="text"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="name">Price</label>
+            </td>
+            <td>             
+              <input formControlName="Price" type="text">
+            </td>
+          </tr>
+          <!-- <tr>
+            <td>
+              <label for="name">IsActive</label>
+            </td>
+            <td>             
+              <input formControlName="IsActive" type="text">
+            </td>
+          </tr> -->
+          <tr>
+            <td></td>  
+            <td  class="content-center">  
+              <button type="submit" mat-raised-button color="accent" [disabled]="!productform.valid">Submit</button>      
+              <button type="reset" mat-raised-button color="accent" (click)="resetForm()">Reset</button>  
+            </td>  
+            <td>  
+              <p *ngIf="dataSaved" style="color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success" align="left">  
+                {{massage}}  
+              </p>  
+            </td>  
+          </tr>
+        </table>
+      </div>   
+      <table class="table"> 
+        <tr ngclass="btn-primary">
+          <th class="mat-header-cell">ProductID</th>
+          <th class="mat-header-cell">Product Name</th>
+          <th class="mat-header-cell">Description</th>
+          <th class="mat-header-cell">Price</th>          
+        </tr>        
+        <tr *ngFor="let p of allProduct">
+          <td>{{ p.ProductID }}</td>
+          <td>{{ p.ProductName }}</td>
+          <td>{{ p.Description }}</td>
+          <td>{{ p.Price }}</td>          
+          <td>  
+            <button type="button" class="btn btn-info" (click)="loadProduct(p.ProductID)">Edit</button>  
+          </td>
+          <td>  
+            <button type="button" class="btn btn-danger" (click)="deleteProduct(p.ProductID)">Delete</button>  
+          </td> 
+        </tr>        
+      </table>     
+    </form>
+  <!-- </mat-card-content>
+  </mat-card> -->
+</div>

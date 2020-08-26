@@ -1,0 +1,27 @@
+<div><h3 class="card-header">Wel-Come to MyStore</h3></div>
+<div>
+    Products Available
+</div>
+ <br/><br/>
+<div class="container-fluid">
+<table *ngFor="let p of allProduct">
+    <tr >
+        <td>
+            <a style="width: 500px;" class="btn btn-outline-success my-2 my-sm-0"  [routerLink]="['/productDetails',p.ProductID]">
+                <span>{{ p.ProductName }}</span><span>{{ p.ProductID }}</span>
+            </a>    
+           
+        </td>
+    </tr>
+    <tr>
+       <td>
+            <p>Description :{{ p.Description }} </p>
+            <p>Price :{{ p.Price }}</p>  
+            
+        </td>
+    </tr>
+    <tr><td></td></tr>
+</table>
+
+</div>
+

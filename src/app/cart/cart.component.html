@@ -1,0 +1,24 @@
+<p>
+    <a [routerLink]="['/shipping']">Shipping Prices</a>
+</p>
+<h4>Products in your cart</h4>
+<div>
+    <table class="table"> 
+        <tr ngclass="btn-primary">          
+          <th class="mat-header-cell">Product Name</th>
+          <th class="mat-header-cell">Description</th>
+          <th class="mat-header-cell">Price</th>         
+        </tr>        
+        <tr *ngFor="let p of items">
+          <td>{{ p.ProductName }}</td>
+          <td>{{ p.Description }}</td>
+          <td>{{ p.Price }}</td>    
+          
+        </tr> 
+        <tr>
+            <td></td>
+            <td> Total </td>
+            <td>{{totalPrice}}</td>      
+        </tr>       
+      </table>   
+</div>
